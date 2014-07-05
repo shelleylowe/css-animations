@@ -14,28 +14,19 @@ body
 }
 .container > div
 {
+    background-color: #FFF;
     margin: auto;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
     text-align: center;
     font-size: 0;
 }
-.light-blue
-{
-    background-color: #B3E5FC;
-}
-.green
-{
-    background-color: #A3E9A4;
-}
-.purple
-{
-    background-color: #E1BEE7;
-}
-.amber
-{
-    background-color: #FFECB3;   
-}
+.light-blue { background-color: #B3E5FC; }
+.green { background-color: #A3E9A4; }
+.purple { background-color: #E1BEE7; }
+.amber { background-color: #FFECB3; }
+.blue-grey { background-color: #CfD8DC; }
+.red {background-color: #F9BDBB; }
 
 @-webkit-keyframes stretch-and-arc 
 {
@@ -75,11 +66,11 @@ body
     0% { width: 80px; height: 80px; border-radius: 15px; }
     10% { width: 80px; height: 80px; border-radius: 100% }
     20% { -webkit-transform: scale(0.3, 0.3); }
-    30% { -webkit-transform: scale(1, 1); }
-    50% { -webkit-transform: scale(0.5, 0.5); }
-    70% { -webkit-transform: scale(1, 1); }
+    30% { -webkit-transform: scale(1, 1); border-radius: 100% }
+    50% { -webkit-transform: scale(0.5, 0.5); border-radius: 0%}
+    70% { -webkit-transform: scale(1, 1); border-radius: 100%}
     80% { -webkit-transform: scale(0.3, 0.3); }
-    90% { width: 80px; height: 80px; border-radius: 100% }
+    90% { width: 80px; height: 80px; }
     100% { width: 80px; height: 80px; border-radius: 15px; }
 }
 @keyframes circle-pulse 
@@ -94,9 +85,8 @@ body
     90% { width: 80px; height: 80px; border-radius: 100% }
     100% { width: 80px; height: 80px; border-radius: 15px; }
 }
-.circle-emit
+.circle-pulse
 {
-    background: #FFF;
     -webkit-transform-origin: center center;
     transform-origin: center center;
     -webkit-animation: circle-pulse 3.5s infinite;
@@ -155,7 +145,7 @@ body
 {
     width: 0;
     height: 0;
-    background: transparent;
+    background-color: transparent !important;
     border: 2px solid #FFF;
     -webkit-transform-origin: center center;
     transform-origin: center center;
@@ -167,9 +157,9 @@ body
     content: '';
     width: 0;
     height: 0;
+    background-color: #FFF;
     border-radius: 100%;
     position: absolute;
-    background-color: #FFF;
     -webkit-animation: box-circle-inner 5s infinite;
     animation: box-circle-inner 5s infinite;
 }
@@ -198,15 +188,168 @@ body
 {
     width: 200px;
     height: 120px;
+    background-color: transparent !important;
 }
 .square-split-part
 {
-    background-color: #FFF;
     width: 30px;
     height: 30px;
     margin: 45px 0 0 0;
+    background-color: #FFF;
     display: inline-block;
     position: relative;
     -webkit-animation: square-split-part 2s infinite;
     animation: square-split-part 2s infinite;
+}
+
+@-webkit-keyframes circle-path
+{
+    0% { width: 60px; height: 60px; }
+    10% { width: 15px; height: 15px; -webkit-transform: translateY(0px); }
+    20% { -webkit-transform: translateY(-50px); }
+    40% { -webkit-transform-origin: center 50px; -webkit-transform: translateY(-50px) rotate(180deg); }
+    69% { width: 15px; height: 15px; }
+    70% { -webkit-transform-origin: center 50px; -webkit-transform: translateY(-50px) rotate(-180deg); }
+    95% { -webkit-transform-origin: center center; -webkit-transform: translateY(50px) rotate(180deg); }
+    100% { -webkit-transform: scale(1, 1); }
+}
+@keyframes circle-path
+{
+    0% { width: 60px; height: 60px; }
+    10% { width: 15px; height: 15px; transform: translateY(0px); }
+    20% { transform: translateY(-50px); }
+    40% { transform-origin: center 50px; transform: translateY(-50px) rotate(180deg); }
+    69% { width: 15px; height: 15px; }
+    70% { transform-origin: center 50px; transform: translateY(-50px) rotate(-180deg); }
+    95% { transform-origin: center center; transform: translateY(50px) rotate(180deg); }
+    100% { transform: scale(1, 1); }
+}
+.circle-path
+{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation: circle-path 3s infinite;
+    animation: circle-path 3s infinite;
+}
+
+@-webkit-keyframes ball-bounce
+{
+    0% { top: -50px; -webkit-animation-timing-function: ease-in; }
+    12% { top: -20px; -webkit-animation-timing-function: ease-out; }
+    18% { top: -38px; -webkit-animation-timing-function: ease-in; }
+    38% { top: 22px; -webkit-animation-timing-function: ease-out; }
+    43% { top: 2px; -webkit-animation-timing-function: ease-in; }
+    62% { top: 60px; -webkit-animation-timing-function: ease-out; }
+    68% { top: 42px; -webkit-animation-timing-function: ease-in; }
+    90%, 100% {top: 100px; -webkit-animation-timing-function: ease-in-out; }
+}
+@keyframes ball-bounce
+{
+    0% { top: -50px; animation-timing-function: ease-in; }
+    12% { top: -20px; animation-timing-function: ease-out; }
+    18% { top: -38px; animation-timing-function: ease-in; }
+    38% { top: 22px; animation-timing-function: ease-out; }
+    43% { top: 2px; animation-timing-function: ease-in; }
+    62% { top: 60px; animation-timing-function: ease-out; }
+    68% { top: 42px; animation-timing-function: ease-in; }
+    90%, 100% {top: 100px; animation-timing-function: ease-in-out; }
+}
+@-webkit-keyframes platform-disappear-top
+{
+    12% { width: 100px; left: 25%; }
+    15% { width: 125px; left: 20%; }
+    20%, 40% { width: 0px; left: 50%; }
+    50%, 100% { width: 100px; left: 25%; }
+}
+@keyframes platform-disappear-top
+{
+    12% { width: 100px; left: 25%; }
+    15% { width: 125px; left: 20%; }
+    20%, 40% { width: 0px; left: 50%; }
+    50%, 100% { width: 100px; left: 25%; }
+}
+@-webkit-keyframes platform-disappear-middle
+{
+    38% { width: 100px; left: 25%; }
+    41% { width: 125px; left: 20%; }
+    46%, 70% { width: 0px; left: 50%; }
+    80%, 100% { width: 100px; left: 25%; }
+}
+@keyframes platform-disappear-middle
+{
+    38% { width: 100px; left: 25%; }
+    41% { width: 125px; left: 20%; }
+    46%, 70% { width: 0px; left: 50%; }
+    80%, 100% { width: 100px; left: 25%; }
+}
+@-webkit-keyframes platform-disappear-bottom
+{
+    62% { width: 100px; left: 25%; }
+    65% { width: 125px; left: 20%; }
+    70%, 90% { width: 0px; left: 50%; }
+    100% { width: 100px; left: 25%; }
+}
+@keyframes platform-disappear-bottom
+{
+    62% { width: 100px; left: 25%; }
+    65% { width: 125px; left: 20%; }
+    70%, 90% { width: 0px; left: 50%; }
+    100% { width: 100px; left: 25%; }
+}
+.platform-bounce
+{
+    width: 200px;
+    height: 120px;
+    background-color: transparent !important;   
+}
+.ball
+{
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background-color: #FFF;
+    position: relative !important;
+    left: 94px;
+    -webkit-animation: ball-bounce 3s infinite;
+    animation: ball-bounce 3s infinite;
+}
+.platform
+{
+    width: 100px;
+    height: 8px; 
+    border-radius: 5px;
+    background-color: #FFF;
+    display: inline-block;
+    margin-top: 20px;
+    -webkit-animation: platform-disappear-middle 3s infinite;
+    animation: platform-disappear-middle 3s infinite;
+}
+.platform::before
+{
+    content: '';
+    background-color: #FFF;
+    width: 100px;
+    height: 8px; 
+    border-radius: 5px; 
+    position: absolute;
+    top: -10px;
+    left: 25%;
+    -webkit-animation: platform-disappear-top 3s infinite;
+    animation: platform-disappear-top 3s infinite;
+}
+.platform::after
+{
+    content: '';
+    background-color: #FFF;
+    width: 100px;
+    height: 8px; 
+    border-radius: 5px; 
+    position: absolute;
+    top: 70px;
+    left: 25%;
+    -webkit-animation: platform-disappear-bottom 3s infinite;
+    animation: platform-disappear-bottom 3s infinite;
 }
