@@ -1,3 +1,7 @@
+/*
+* Author: Shelley Lowe 
+* Credits to https://www.behance.net/gallery/17390019/Preloaders and http://tympanus.net/codrops/2014/04/25/freebie-flat-style-squared-preloaders/ for some sweet designs
+*/
 body
 {
     margin: 0;   
@@ -13,6 +17,8 @@ body
     margin: auto;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
+    text-align: center;
+    font-size: 0;
 }
 .light-blue
 {
@@ -166,4 +172,41 @@ body
     background-color: #FFF;
     -webkit-animation: box-circle-inner 5s infinite;
     animation: box-circle-inner 5s infinite;
+}
+
+@-webkit-keyframes square-split-part
+{
+    0% { margin-left: -3px; margin-right: -3px; -webkit-transform-origin: center center; -webkit-transform: scale(0.8, 4); }
+    21% { margin-left: -1px; margin-right: -1px; -webkit-transform: scale(1, 1); }
+    22% { margin-left: 0; margin-right: 0; -webkit-animation-timing-function: ease; }
+    50% { margin-left: -2px; margin-right: -2px; -webkit-transform: scale(0.6, 0.6); -webkit-animation-timing-function: ease-in-out; }
+    78% { margin-left: 0; margin-right: 0; -webkit-animation-timing-function: ease; }
+    79% { margin-left: -1px; margin-right: -1px; -webkit-transform: scale(1, 1); }
+    100% { margin-left: -3px; margin-right: -3px; -webkit-transform-origin: center center; -webkit-transform: scale(0.8, 4); }
+}
+@keyframes square-split-part
+{
+    0% { margin-left: -3px; margin-right: -3px; transform-origin: center center; transform: scale(0.8, 4); }
+    21% { margin-left: -1px; margin-right: -1px; transform: scale(1, 1); }
+    22% { margin-left: 0; margin-right: 0; animation-timing-function: ease; }
+    50% { margin-left: -2px; margin-right: -2px; transform: scale(0.6, 0.6); animation-timing-function: ease-in-out; }
+    78% { margin-left: 0; margin-right: 0; animation-timing-function: ease; }
+    79% { margin-left: -1px; margin-right: -1px; transform: scale(1, 1); }
+    100% { margin-left: -3px; margin-right: -3px; transform-origin: center center; transform: scale(0.8, 4); }
+}
+.square-split
+{
+    width: 200px;
+    height: 120px;
+}
+.square-split-part
+{
+    background-color: #FFF;
+    width: 30px;
+    height: 30px;
+    margin: 45px 0 0 0;
+    display: inline-block;
+    position: relative;
+    -webkit-animation: square-split-part 2s infinite;
+    animation: square-split-part 2s infinite;
 }
