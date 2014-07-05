@@ -1,0 +1,169 @@
+body
+{
+    margin: 0;   
+}
+.container
+{
+    width: 100%;
+    height: 250px;
+    position: relative;
+}
+.container > div
+{
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+.light-blue
+{
+    background-color: #B3E5FC;
+}
+.green
+{
+    background-color: #A3E9A4;
+}
+.purple
+{
+    background-color: #E1BEE7;
+}
+.amber
+{
+    background-color: #FFECB3;   
+}
+
+@-webkit-keyframes stretch-and-arc 
+{
+    0% { width: 180px; height: 10px; border-radius: 5px; }
+    18% { width: 10px; height: 10px; border-radius: 10px; }
+    25% { width: 30px; height: 30px; border-radius: 100%; -webkit-transform: translateY(0px); }
+    32% { -webkit-transform-origin: center center; -webkit-transform: translateY(-80px) rotate(0deg); border-radius: 5px; }
+    42% { -webkit-transform-origin: center 80px; -webkit-transform: translateY(-80px) rotate(90deg); }
+    58% { -webkit-transform-origin: center 80px; -webkit-transform: translateY(-80px) rotate(-90deg); }
+    68% { -webkit-transform-origin: center center; -webkit-transform: translateY(-80px) rotate(0deg); border-radius: 5px; }
+    75% { width: 30px;  height: 30px; border-radius: 100%; -webkit-transform: translateY(0px); }
+    80% { width: 10px; height: 10px; border-radius: 10px; }
+    100% { width: 180px; height: 10px; border-radius: 5px; }
+}
+@keyframes stretch-and-arc 
+{
+    0% { width: 180px; height: 10px; border-radius: 5px; }
+    18% { width: 10px; height: 10px; border-radius: 10px; }
+    25% { width: 30px; height: 30px; border-radius: 100%; transform: translateY(0px); }
+    32% { transform-origin: center center; transform: translateY(-80px) rotate(0deg); border-radius: 5px; }
+    42% { transform-origin: center 80px; transform: translateY(-80px) rotate(90deg); }
+    58% { transform-origin: center 80px; transform: translateY(-80px) rotate(-90deg); }
+    68% { transform-origin: center center; transform: translateY(-80px) rotate(0deg); border-radius: 5px; }
+    75% { width: 30px;  height: 30px; border-radius: 100%; transform: translateY(0px); }
+    80% { width: 10px; height: 10px; border-radius: 10px; }
+    100% { width: 180px; height: 10px; border-radius: 5px; }
+}
+.stretch-and-arc
+{
+    background: #FFF;
+    -webkit-animation: stretch-and-arc 3.5s infinite;
+    animation: stretch-and-arc 3.5s infinite;
+}
+
+@-webkit-keyframes circle-pulse 
+{
+    0% { width: 80px; height: 80px; border-radius: 15px; }
+    10% { width: 80px; height: 80px; border-radius: 100% }
+    20% { -webkit-transform: scale(0.3, 0.3); }
+    30% { -webkit-transform: scale(1, 1); }
+    50% { -webkit-transform: scale(0.5, 0.5); }
+    70% { -webkit-transform: scale(1, 1); }
+    80% { -webkit-transform: scale(0.3, 0.3); }
+    90% { width: 80px; height: 80px; border-radius: 100% }
+    100% { width: 80px; height: 80px; border-radius: 15px; }
+}
+@keyframes circle-pulse 
+{
+    0% { width: 80px; height: 80px; border-radius: 15px; }
+    10% { width: 80px; height: 80px; border-radius: 100% }
+    20% { transform: scale(0.3, 0.3); }
+    30% { transform: scale(1, 1); }
+    50% { transform: scale(0.5, 0.5); }
+    70% { transform: scale(1, 1); }
+    80% { transform: scale(0.3, 0.3); }
+    90% { width: 80px; height: 80px; border-radius: 100% }
+    100% { width: 80px; height: 80px; border-radius: 15px; }
+}
+.circle-emit
+{
+    background: #FFF;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation: circle-pulse 3.5s infinite;
+    animation: circle-pulse 3.5s infinite;
+}
+
+@-webkit-keyframes box-circle
+{
+    10% { width: 50px; height: 50px; }
+    14% { width: 35px; height: 35px; }
+    18% { width: 45px; height: 45px; -webkit-transform: rotate(0deg); }
+    22% { border-radius: 0%; }
+    30% { border-radius: 100%; -webkit-transform: rotate(180deg); }
+    34% { border-radius: 0%; -webkit-transform: rotate(0deg); }
+    38% { border-radius: 0%; }
+    41% { border-radius: 15px; }
+    82% { width: 45px; height: 45px; border-radius: 15px; }
+    100% { width: 0; height: 0; border-radius: 100%; }
+}
+@keyframes box-circle
+{
+    10% { width: 50px; height: 50px; }
+    14% { width: 35px; height: 35px; }
+    18% { width: 45px; height: 45px; transform: rotate(0deg); }
+    22% { border-radius: 0%; }
+    30% { border-radius: 100%; transform: rotate(180deg); }
+    34% { border-radius: 0%; transform: rotate(0deg); }
+    38% { border-radius: 0%; }
+    41% { border-radius: 15px; }
+    82% { width: 45px; height: 45px; border-radius: 15px; }
+    100% { width: 0; height: 0; border-radius: 100%; }
+}
+@-webkit-keyframes box-circle-inner
+{
+    41% { width: 0px; height: 0px; }
+    54% { width: 7px; height: 7px; top: 19px; left: 19px; }
+    65% { width: 7px; height: 7px; top: 0px; left: 10px; }
+    69% { width: 7px; height: 7px; top: 9px; left: 38px; }
+    73% { width: 7px; height: 7px; top: 27px; left: 0px; }
+    78% { width: 7px; height: 7px; top: 38px; left: 20px; }
+    82% { width: 7px; height: 7px; top: 19px; left: 19px; }
+    100% { width: 4px; height: 4px; top: -2px; left: -2px; }
+}
+@keyframes box-circle-inner
+{
+    41% { width: 0px; height: 0px; }
+    54% { width: 7px; height: 7px; top: 19px; left: 19px; }
+    65% { width: 7px; height: 7px; top: 0px; left: 10px; }
+    69% { width: 7px; height: 7px; top: 9px; left: 38px; }
+    73% { width: 7px; height: 7px; top: 27px; left: 0px; }
+    78% { width: 7px; height: 7px; top: 38px; left: 20px; }
+    82% { width: 7px; height: 7px; top: 19px; left: 19px; }
+    100% { width: 4px; height: 4px; top: -2px; left: -2px; }
+}
+.box-circle
+{
+    width: 0;
+    height: 0;
+    background: transparent;
+    border: 2px solid #FFF;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation: box-circle 5s infinite;
+    animation: box-circle 5s infinite;
+}
+.box-circle::after
+{
+    content: '';
+    width: 0;
+    height: 0;
+    border-radius: 100%;
+    position: absolute;
+    background-color: #FFF;
+    -webkit-animation: box-circle-inner 5s infinite;
+    animation: box-circle-inner 5s infinite;
+}
