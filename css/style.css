@@ -26,7 +26,10 @@ body
 .purple { background-color: #E1BEE7; }
 .amber { background-color: #FFECB3; }
 .blue-grey { background-color: #CfD8DC; }
-.red {background-color: #F9BDBB; }
+.red { background-color: #F9BDBB; }
+.teal { background-color: #B2DFDB; }
+.indigo { background-color: #C5CAE9; }
+.yellow { background-color: #FFF9C4; }
 
 @-webkit-keyframes stretch-and-arc 
 {
@@ -352,4 +355,41 @@ body
     left: 25%;
     -webkit-animation: platform-disappear-bottom 3s infinite;
     animation: platform-disappear-bottom 3s infinite;
+}
+
+@-webkit-keyframes triangle
+{
+    0% { border-bottom-width: 65px; border-left-width: 40px; border-right-width: 40px; -webkit-transform: rotate(0deg); }
+    15% { border-right-width: 0px; border-left-width: 40px; }
+    30% { border-bottom-width: 80px; border-left-width: 0px; border-right-width: 40px; }
+    45% { border-bottom-width: 40px; border-left-width: 40px; border-right-width: 40px; -webkit-transform: translateX(0); }
+    55% { -webkit-transform: translateX(-30px); }
+    65% { -webkit-transform: translateX(30px); }
+    75% { -webkit-transform: translateX(0px); }
+    76% { -webkit-transform: rotate(0); }
+    100% { border-bottom-width: 65px; -webkit-transform: rotate(360deg); }
+}
+@keyframes triangle
+{
+    0% { border-bottom-width: 65px; border-left-width: 40px; border-right-width: 40px; transform: rotate(0deg); }
+    15% { border-right-width: 0px; border-left-width: 40px; }
+    30% { border-bottom-width: 80px; border-left-width: 0px; border-right-width: 40px; }
+    45% { border-bottom-width: 40px; border-left-width: 40px; border-right-width: 40px; transform: translateX(0); }
+    55% { transform: translateX(-30px); }
+    65% { transform: translateX(30px); }
+    75% { transform: translateX(0px); }
+    76% { transform: rotate(0); }
+    100% { border-bottom-width: 65px; transform: rotate(360deg); }
+}
+.triangle
+{
+    width: 0;
+    height: 0;
+    border-right: 40px solid #B2DFDB;
+    border-left: 40px solid #B2DFDB;
+    border-bottom: 65px solid #FFF;
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    -webkit-animation: triangle 2.5s infinite;
+    animation: triangle 2.5s infinite;
 }
